@@ -1,0 +1,487 @@
+html {
+  height: 100%;
+  background-image: -webkit-radial-gradient(ellipse farthest-corner at center top, #000d4d 0%, #000105 100%);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #000d4d 0%, #000105 100%);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0px;
+}
+body ul, body li, body dl, body dd, body dt, body input, body button {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#playBar {
+  position: fixed;
+  bottom: 50px;
+  height: 120px;
+  width: 100%;
+  z-index: 90;
+}
+#playBar .centerbox {
+  position: relative;
+  margin: 0 auto;
+  width: 18em;
+  height: 100%;
+}
+
+.clock {
+  position: absolute;
+  left: 6em;
+  top: 10px;
+  width: 6em;
+  height: 6em;
+  display: inline-block;
+  background: #fff;
+  background-color: rgba(225, 225, 225, 0.5);
+  border-radius: 50%;
+}
+
+.progress {
+  position: absolute;
+  cursor: pointer;
+  color: #fff;
+  width: 5.5em;
+  height: 5.5em;
+  background-color: #000621;
+  border-radius: 50%;
+  left: 0.25em;
+  top: 0.25em;
+  text-align: center;
+}
+
+.progress i {
+  font-size: 2em;
+  display: block;
+  margin-top: 25px;
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.progress span {
+  font: 10px/16px Arial;
+}
+
+.progress:hover i {
+  color: #00D2E5;
+}
+
+.left, .right {
+  width: 3em;
+  height: 6em;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.left {
+  border-radius: 6em 0 0 6em;
+}
+
+.right {
+  border-radius: 0 6em 6em 0;
+}
+
+.left div, .right div {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3em;
+  height: 6em;
+  background-color: #00D2E5;
+  border-radius: 6em 0 0 6em;
+  transition: all .3s;
+  transform-origin: right center;
+  transform: rotateZ(-180deg);
+}
+
+.right div {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 0 6em 6em 0;
+  transform-origin: left center;
+}
+
+.clock:nth-child(1) .left div, .clock:nth-child(1) .right div {
+  background-color: #00D2E5;
+}
+
+.prevBtn, .nextBtn, .typeBtn {
+  font-size: 1.5em;
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.prevBtn {
+  top: 40px;
+  left: 0px;
+}
+
+.nextBtn {
+  top: 40px;
+  right: 0px;
+}
+
+.typeBtn {
+  top: 40px;
+  right: -100px;
+}
+
+.prevBtn:hover, .nextBtn:hover {
+  color: #00D2E5;
+}
+
+.visBox {
+  width: 500px;
+  height: 350px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.visualizerBlist {
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  left: 105px;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.visualizerBlist li {
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  color: #00072B;
+  border-radius: 11px;
+  background: #254469;
+  text-align: center;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.visualizerBlist .active {
+  background: #000106;
+  color: #254469;
+  -webkit-box-shadow: 0px -1px 0px #254469 inset;
+}
+
+.songinfo {
+  width: 600px;
+  height: 100px;
+  background: rgba(225, 225, 225, 0.8);
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  top: 30px;
+}
+
+.lrcBox {
+  width: 290px;
+  height: 100px;
+  background: rgba(99, 99, 99, 0.6);
+  float: right;
+  position: relative;
+  overflow: hidden;
+}
+
+.lrcBox ul {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+.lrcBox ul li {
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  line-height: 25px;
+  color: #ddd;
+}
+
+.lrcBox ul .cli {
+  color: #fff;
+  font-size: 16px;
+}
+
+.songCover {
+  width: 310px;
+  height: 100px;
+  float: left;
+  display: table;
+}
+
+.songCover .coverImg {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.songCover .info {
+  width: 200px;
+  float: right;
+  line-height: 30px;
+  color: #666;
+  font-family: 'Microsoft YaHei';
+  margin-top: 15px;
+}
+
+.songCover .info dt {
+  width: 100%;
+  font-size: 18px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songCover .info dd {
+  font-size: 14px;
+}
+
+.siderBox {
+  width: 260px;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+  position: fixed;
+  z-index: 99;
+  left: 0px;
+  top: 0px;
+}
+.siderBox .searchBox {
+  width: 200px;
+  height: 30px;
+  margin: 10px auto;
+}
+.siderBox .searchBox input {
+  width: 162px;
+  height: 30px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  background: #ccc;
+  float: left;
+}
+.siderBox .searchBox button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #000105;
+  color: #fff;
+  cursor: pointer;
+}
+.siderBox .listContainer {
+  width: 520px;
+  height: 80%;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.siderBox .ul_list {
+  width: 260px;
+  height: 100%;
+  background: #EEEEEE;
+  position: relative;
+  overflow: auto;
+}
+.siderBox .ul_list li {
+  width: 240px;
+  padding: 0px 10px;
+  line-height: 50px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  color: #333;
+}
+.siderBox .ul_list li span {
+  display: inline-block;
+  width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.siderBox .ul_list li i {
+  font-size: 14px;
+  color: #999;
+  vertical-align: middle;
+}
+.siderBox .ul_list li:hover {
+  background: #ccc;
+}
+.siderBox .ul_list .liactive {
+  background: #666;
+  color: #fff;
+  border: none;
+}
+.siderBox .ul_list .liactive span:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "\f01d";
+}
+.siderBox .ul_list .nomatch {
+  line-height: 200px;
+  color: #999;
+  text-align: center;
+}
+
+.CD {
+  width: 500px;
+  height: 500px;
+  background: url("../mp3/fm.jpg");
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px rgba(173, 157, 169, 0.4);
+  position: absolute;
+  opacity: 0.80;
+  right: -250px;
+  top: 55px;
+  animation: 9.5s linear 0s normal none infinite rotate;
+  -webkit-animation: 9.5s linear 0s normal none infinite rotate;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+.CD2 {
+  width: 165px;
+  height: 165px;
+  background: none repeat scroll 0% 0% rgba(27, 27, 27, 0.93);
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px rgba(173, 157, 169, 0.4);
+  position: relative;
+  left: 167px;
+  top: 167px;
+  opacity: 0.80;
+}
+
+.CD3 {
+  width: 60px;
+  height: 60px;
+  background: none repeat scroll 0% 0%    #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px #ad9da9;
+  position: absolute;
+  left: 52px;
+  top: 52px;
+  opacity: 0.70;
+}
+
+.CD:after {
+  margin-left: -250px;
+  color: #FFF;
+  text-align: center;
+  font-size: 43px;
+  font-weight: bold;
+  font-family: "Times New Roman",serif;
+  text-shadow: 0px 0px 40px #000, 0px -1px 0px #F3F3F3, 0px -2px 0px #F3F3F3;
+  width: 500px;
+  content: "CD Cover";
+  position: absolute;
+  left: 50%;
+  top: 55px;
+}
+
+.CD:before {
+  margin-left: -250px;
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  width: 500px;
+  content: "CD Cover Base On CSS3\AXoris [jekion.com]\A 2016.10.28";
+  white-space: pre;
+  position: absolute;
+  left: 50%;
+  top: 385px;
+}
+
+.listmenu {
+  width: 100%;
+  height: 40px;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.listmenu li {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+}
+
+.listmenu li.active {
+  color: #10C4D7;
+}
+
+.copyRight {
+  width: 100%;
+  font-family: 'Microsoft YaHei';
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  line-height: 40px;
+}
+
+.copyRight a {
+  text-decoration: none;
+  color: #666;
+}
+
+/*# sourceMappingURL=main.css.map */

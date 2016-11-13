@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>在线音乐播放器</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="dest/css/main.css" rel="stylesheet">
+<link href="dest/css/font-awesome.min.css" rel="stylesheet">
+<link href="dest/css/mCustomScrollbar.css" rel="stylesheet">
+</head>
+<body>
+    <canvas id="bgcanv"></canvas>
+    <div id="playBar">
+      <div class="centerbox">
+        <ul id="visualizerBar" class="visualizerBlist">
+          <li id="bolt" class="active"><i class="icon-bolt"></i></li>
+          <li id="signal" ><i class="icon-signal"></i></li>
+        </ul>
+         <div id="playButn" class="clock">    
+            <div class="left"><div></div></div>
+            <div class="right"><div></div></div>
+            <div class="progress">
+            <i id="p_icon" class="icon-play"></i>
+            <span class="pronum">00:00</span>
+            </div>
+          </div>
+          <i id="prevButn" class="prevBtn icon-step-backward"></i>
+          <i id="nextButn" class="nextBtn icon-step-forward"></i>
+          <i id="typeButn" class="typeBtn icon-indent-right"></i>
+      </div>
+    </div>
+    <div id="visBox" class="visBox">
+      <canvas id="viscanvas" width="500" height="350"></canvas>
+    </div>
+    <script type="text/javascript" data-main="dest/js/main" src="./src/js/require.js"></script>
+  <div id="audioContainer"></div>
+  <div class="songinfo">
+     <div class="songCover">
+       <img class="coverImg" src="./dest/mp3/hh.jpg">
+       <dl class="info">
+         <dt>....</dt>
+         <dd>...</dd>
+       </dl>
+     </div>
+     <div class="lrcBox">
+      <ul  style="margin-top:-25px; ">
+        <li>....暂无歌词....</li>
+      </ul>
+    </div> 
+  </div>
+  <!--side-->
+  <div class="siderBox">
+    <div class="searchBox">
+      <input id="keyword" type="text" name="keyword">
+      <button type="button" id="searchBtn"><i class="icon-search"></i></button>
+    </div>
+    <div class="listContainer">      
+      <ul class="ul_list searchList">
+        <li class="nomatch"><i class="icon-search"></i>搜一搜....</li>
+      </ul>
+      <ul class="ul_list loveList">
+        <li class="liactive"><span>天之大-韩红</span></li>
+      </ul>
+    </div>
+   <ul class="listmenu">
+      <li class="active" data-side="0"><i class="icon-reorder"></i></li>
+      <li data-side="1"><i class="icon-heart"></i></li>
+    </ul>
+    <div class="copyRight">
+
+      数据来源Kugo，仅供学习;@<a target="_blank" href="http://www.jekion.com">jekion</a>；
+    </div>
+  </div>
+  <!--CD-->
+  <div class="CD">
+      <div class="CD2">
+          <div class="CD3"></div>
+      </div>
+  </div>
+  <!--折线-->
+  <!-- <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="0,0 0,50 20,20 20,40 40,40 40,60" style="fill:white;stroke:red;stroke-width:2"/> -->
+</svg>
+</body>
+</html>
