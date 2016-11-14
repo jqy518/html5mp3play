@@ -376,7 +376,7 @@ define('player',["require","visualizer","lrcmanager","jquery.mCustomScrollbar","
         fileHead:100,
         singerName :"韩红",
         fileName:"韩红 - 天之大",
-        url:"./dest/mp3/tzd.mp3",
+        url:"http://fs.open.kugou.com/fc8b84dd590665bda56d9bf862fdf072/5827b693/G072/M02/06/07/KJQEAFdUViWAPaBSAEflpT31pcw807.mp3",
         //url:"http:\/\/fs.open.kugou.com\/535c5d8dd2766ac38cb8393eaa805f7a\/58228f3d\/G005\/M03\/1D\/13\/RQ0DAFS-rTGAVmePAC9Nz1umW20661.mp3",
         imgUrl:"http:\/\/singerimg.kugou.com\/uploadpic\/softhead\/{size}\/20160629\/20160629120333920437.jpg",
         "timeLength":294

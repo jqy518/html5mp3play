@@ -105,6 +105,6 @@ module.exports = function(grunt){
   //requireJS
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-  //grunt.registerTask('default', ['sass:dev','jshint','requirejs','uglify']);
+  grunt.registerTask('default', ['sass:dev','jshint','requirejs','uglify']);
 
 };
